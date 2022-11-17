@@ -153,36 +153,34 @@ public class Sorting {
             quickSort3Medians(arr, partition + 1, endIndex);
         }
     }
-    private static int medianOf3(int[] intArray, int left, int right) {
+    private static int medianOf3(int[] arr, int left, int right) {
         int center = (left + right) / 2;
 
-        if (intArray[left] > intArray[center])
-            swapElements(intArray, left, center);
+        if (arr[left] > arr[center])
+            swapElements(arr, left, center);
 
-        if (intArray[left] > intArray[right])
-            swapElements(intArray, left, right);
+        if (arr[left] > arr[right])
+            swapElements(arr, left, right);
 
-        if (intArray[center] > intArray[right])
-            swapElements(intArray, center, right);
+        if (arr[center] > arr[right])
+            swapElements(arr, center, right);
 
-        swapElements(intArray, center, right - 1);
-        return intArray[right - 1];
+        swapElements(arr, center, right - 1);
+        return arr[right - 1];
     }
-    private static int partition3median(int[] intArray, int left, int right, double pivot) {
+    private static int partition3median(int[] arr, int left, int right, double pivot) {
         int leftPtr = left;
         int rightPtr = right - 1;
 
         while (true) {
-            while (intArray[++leftPtr] < pivot)
-                ;
-            while (intArray[--rightPtr] > pivot)
-                ;
+            while (arr[++leftPtr] < pivot);
+            while (arr[--rightPtr] > pivot);
             if (leftPtr >= rightPtr)
                 break;
             else
-                swapElements(intArray, leftPtr, rightPtr);
+                swapElements(arr, leftPtr, rightPtr);
         }
-        swapElements(intArray, leftPtr, right - 1);
+        swapElements(arr, leftPtr, right - 1);
         return leftPtr;
     }
 

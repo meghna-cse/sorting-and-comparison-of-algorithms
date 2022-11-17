@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Sort and Compare Algorithms</title>
+    <link rel="stylesheet" href="ui/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="ui/css/index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="ui/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="ui/js/index.js" defer=""></script>
+
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+  </head>
+  <body class="u-body u-overlap u-overlap-transparent u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-0ba5"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-left u-text u-text-default u-text-1">CSE 5311: Design and Analysis of Algorithms<br>Fall'22 Programming Project<br>
+        </p>
+      </div></header>
+    <section class="u-align-center u-clearfix u-image u-image-contain u-section-1" id="sec-4bb6" data-image-width="1280" data-image-height="897">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="u-text u-text-default u-text-grey-90 u-text-1">Sort and Compare Algorithms</h1>
+        <p class="u-text u-text-2">This is a project made as part of CSE 5311 Design and Analysis of Algorithms Fall'22 course taught at The University of Texas at Arlington</p>
+      </div>
+    </section>
+    <section class="u-align-left u-clearfix u-section-2" id="sec-a84b">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-expanded-width-xs u-tab-links-align-center u-tabs u-tabs-1">
+          <ul class="u-border-2 u-border-grey-75 u-spacing-30 u-tab-list u-unstyled" role="tablist">
+            <li class="u-tab-item" role="presentation">
+              <a class="active u-active-palette-1-light-1 u-border-1 u-border-no-bottom u-border-palette-1-dark-2 u-button-style u-tab-link u-tab-link-1" id="link-tab-081f" href="#tab-081f" role="tab" aria-controls="tab-081f" aria-selected="true">Perform Sorting</a>
+            </li>
+            <li class="u-tab-item" role="presentation">
+              <a class="u-active-palette-1-light-1 u-border-1 u-border-no-bottom u-border-palette-1-dark-2 u-button-style u-tab-link u-tab-link-2" id="link-tab-26d7" href="#tab-26d7" role="tab" aria-controls="tab-26d7" aria-selected="false"> Compare Sorting Algorithms</a>
+            </li>
+          </ul>
+          <div class="u-tab-content">
+            <div class="u-container-style u-tab-active u-tab-pane" id="tab-081f" role="tabpanel" aria-labelledby="link-tab-081f">
+              <div class="u-container-layout u-container-layout-1">
+                <p class="u-align-center u-text u-text-1">
+                  <span style="font-weight: 700;">Enter the input to perform sorting in the following format: &lt;size_of_input&gt; &lt;algorithm&gt;</span>
+                  <br>
+                  <span style="font-style: italic;">Size of Input</span>: Enter any integer number<br>
+                  <br>Algorithm: Enter the number corresponding to the algorithm<br>1. Bubble Sort<br>2. Selection Sort<br>3. Insertion Sort<br>4. Merge Sort<br>5. Quick Sort (regular)<br>6. Quick Sort with 3 medians<br>7. Heap Sort<br>
+                  <span style="font-style: italic;">Example of sample input: 10 2</span>
+                  <br>The [10 2] input will perform Selection Sort on a set of integers of size 10.
+                </p>
+                <div class="u-align-center u-form u-form-1">
+                  <!-- <form  class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="input" style="padding: 10px;"> -->
+                    <div class="u-form-group u-form-name u-label-none">
+                      <label for="name-01eb" class="u-label">sortingInput</label>
+                      <input id="algorithmInput" type="text" placeholder="Enter the input in the format mentioned above" id="name-01eb" name="sortingInput" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                    </div>
+                    <div class="u-align-center u-form-group u-form-submit u-label-none">
+                      <button id="runSorting" class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-btn-submit u-button-style u-hover-none u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-1">RUN</button>
+                      <!-- <input  type="submit" class="u-form-control-hidden"> -->
+                    </div>
+                    <input type="hidden" value="" name="recaptchaResponse">
+                    <input type="hidden" name="formServices" value="07f9daf870a7d55bbe93c7d68b2ba09c">
+                  <!-- </form> -->
+				  <code id="outputSorting"></code>
+                </div>
+                <div class="u-align-center u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+              </div>
+            </div>
+            <div class="u-container-style u-tab-pane" id="tab-26d7" role="tabpanel" aria-labelledby="link-tab-26d7">
+              <div class="u-container-layout u-container-layout-2">
+                <p class="u-align-center u-text u-text-2">
+                  <span style="font-weight: 700;">Enter the input to perform sorting in the following format: &lt;size_of_input&gt; &lt;number_for_algorithms&gt;</span>
+                  <br>
+                  <span style="font-style: italic;">Size of Input</span>: Enter any integer number<br>
+                  Algorithm: Enter the number corresponding to the algorithm to compare<br>1. Bubble Sort<br>2. Selection Sort<br>3. Insertion Sort<br>4. Merge Sort<br>5. Quick Sort (regular)<br>6. Quick Sort with 3 medians<br>7. Heap Sort<br>
+                  <span style="font-style: italic;">Example of sample input: 10 2 4</span>
+                  <br>The [10 2 4] input will compare Selection Sort and Merge Sort for a set of integers of size 10.
+                </p>
+				<div class="u-align-center u-form u-form-1">
+                  <!-- <form  class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="input" style="padding: 10px;"> -->
+                    <div class="u-form-group u-form-name u-label-none">
+                      <label for="name-01eb" class="u-label">compareInput</label>
+                      <input id="comparingInput" type="text" placeholder="Enter the input in the format mentioned above" name="compareInput" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="">
+                    </div>
+                    <div class="u-align-center u-form-group u-form-submit u-label-none">
+                      <!-- Run should be connected with main.java file -->
+                      <button id="runComparison"  class="u-active-none u-border-2 u-border-active-palette-2-dark-1 u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-btn-submit u-button-style u-hover-none u-none u-text-hover-palette-2-base u-text-palette-1-base u-btn-2">RUN</button>
+                    </div>
+                    <input type="hidden" value="" name="recaptchaResponse">
+                    <input type="hidden" name="formServices" value="07f9daf870a7d55bbe93c7d68b2ba09c">
+                  <!-- </form> --> 
+                </div>
+                <div class="u-align-center u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-2243"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1"> CSE 5311: Design and Analysis of Algorithms<br>Programming Project<br>Fall'22<br>The University of Texas at Arlington
+        </p>
+      </div></footer>
+    
+  
+</body>
+<script type="text/javascript" src="ui/js/functionality.js"></script>
+</html>
